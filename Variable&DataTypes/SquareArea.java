@@ -1,4 +1,4 @@
-# area of square
+//# area of square
 import java.util.Scanner;
 
 public class SquareArea {
