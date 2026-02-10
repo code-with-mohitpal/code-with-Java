@@ -56,30 +56,26 @@
 
 
 
-#include <stdio.h>
+import java.util.Scanner;
 
-int main() {
-    char deviceName[100];
-    char status[100];
-    int modelNumber;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-    // Read device name
-    fgets(deviceName, sizeof(deviceName), stdin);
+        // Read device name
+        String deviceName = sc.nextLine();
 
-    // Remove trailing newline if present
-    deviceName[strcspn(deviceName, "\n")] = '\0';
+        // Read status (can contain spaces)
+        String status = sc.nextLine();
 
-    // Read status
-    fgets(status, sizeof(status), stdin);
-    status[strcspn(status, "\n")] = '\0';
+        // Read model number
+        int modelNumber = sc.nextInt();
 
-    // Read model number
-    scanf("%d", &modelNumber);
+        // Print formatted output
+        System.out.println("Device Name: " + deviceName);
+        System.out.println("Status: " + status);
+        System.out.println("Model Number: " + modelNumber);
 
-    // Print formatted output
-    printf("Device Name: %s\n", deviceName);
-    printf("Status: %s\n", status);
-    printf("Model Number: %d\n", modelNumber);
-
-    return 0;
+        sc.close();
+    }
 }
